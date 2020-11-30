@@ -69,9 +69,10 @@
 		
 		$data = curl_exec($ch);
         	$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-   	     
+   	    
 		curl_close($ch);
-			retur: (!empty($data)) ? $data : true;
+		if ($code === 200 || $code === 204) { 
+			return (!empty($data)) ? $data : true;
 		} 
 		return false;
 	}
