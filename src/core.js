@@ -23,6 +23,47 @@ Core.prototype = (function() {
 
       	var _setEvent = function(){
 
+		  
+		$('#create-new-concept').on("click", function(e) {
+
+			var label = $('#search.assign-phrase').val();
+			if(label) {
+
+	
+				var postdata = {
+                                        label : label,
+					action: 'create'
+                                };
+                                $.ajax({
+                                        url: "jump.php",
+                                        type: "POST",
+                                        data: postdata,		
+					statusCode: {
+
+                                                400: function(xhr) {
+                                                        var info = JSON.parse(xhr.responseText);
+                                                }
+                                        }
+                                }).done(function(data) {
+
+					var response = JSON.parse(data);
+console.log(response);
+					if(response.success) {
+
+						var span = $('<span/>', {
+							'class': 'badge badge-info',
+							'style': 'margin-left: 4px; margin-right: 4px;',
+							html: label
+						});
+				 		$('.accordion .card #append-result').append(span);
+
+					}
+
+
+				});
+			} 
+		});
+	
 		
 		$(".accordion .card #search").typeahead({
                         
@@ -93,7 +134,6 @@ Core.prototype = (function() {
        
 	return {
 
-                
 		init: function(){
 			_setEvent();
 		},

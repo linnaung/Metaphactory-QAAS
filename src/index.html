@@ -25,13 +25,37 @@
     					</div>
 
     					<div id="collapseOne" class="collapse show">
-      						<div class="card-body" style="height:300px">
+      						<div class="card-body" style="max-height:300px;">
 
-							  <input type="text" id="search" class="assign-phrase form-control input-xs"
-                                                        placeholder="Type to search..." style="border-radius:4px; margin-top:3px"/>
-					
-							<div id="append-result" style="margin-top: 10px; border: 1px solid red; height: 200px; border-radius: 5px;">
+							<div class="row">
+						
+    								<div class="col-md-6 col-sm-6 col-6 input-group">
+									
+									<input type="text" id="search" class="assign-phrase form-control" placeholder="Type to search...">
+  									<div class="input-group-append">
+    
+										<span class="input-group-text" id="create-new-concept" style="cursor:pointer;"> 	
+											<svg 
+												width="20" 
+												height="20" 
+												viewBox="0 0 16 16" 
+												class="bi bi-plus" 
+												fill="currentColor" 
+												xmlns="http://www.w3.org/2000/svg">
+  												<path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+											</svg>
+										</span>
+
+  									</div>
+								</div> 
+
+							</div>
+							<div class="row">
+    								<div class="col-md-6 col-sm-6 col-6">
+									<div id="append-result" style="margin-top: 10px; border: 1px solid red; height: 200px; border-radius: 5px;">
  
+									</div>
+								</div>
 							</div>
 
 						</div>
