@@ -55,12 +55,13 @@
 		
 		$acceptFormat = "Accept: application/sparql-results+json";
 		$contentType = "Content-Type: application/x-www-form-urlencoded";        
-		$auth = "Authorization: Basic TGlubjpSb2FyaW5nZmlyZUA2MjM=";	
-	
+		$userpwd = "admin:i-0931763b2d97a1e1a";	
+
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_USERPWD, $userpwd);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, [$acceptFormat, $contentType, $auth]);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, [$acceptFormat, $contentType]);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
