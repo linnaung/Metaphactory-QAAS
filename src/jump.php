@@ -16,10 +16,12 @@
 		if($response) {
 	
 			echo $response;
-		} else {
-			$response['result'] = "No result found!";
-			echo json_encode($response);
-		}
+			exit();
+		} 
+			
+		$response['result'] = "No result found!";
+		echo json_encode($response);
+		exit();
 	} 
 
 	//create new suggestion	
@@ -40,13 +42,15 @@
 			if($response) {
 				$result['success'] = true;
 				echo json_encode($result);
+				exit();
 			} 
 		
-		} else {
+		} 
 			
-			$response['result'] = "Invalid";
-			echo json_encode($response);
-		}
+			
+		$response['result'] = "Invalid";
+		echo json_encode($response);
+		exit();
 	
 	}
 

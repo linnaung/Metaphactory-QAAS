@@ -1,1 +1,1 @@
-POC to use Metaphactory's QAAS
+POC to use Metaphactory's QAAS (Query as a Service)
